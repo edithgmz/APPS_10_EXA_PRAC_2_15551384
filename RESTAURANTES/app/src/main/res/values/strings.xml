@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">RESTAURANTES</string>
+    <string name="materia">aplicaciones i</string>
+    <string name="examen">examen práctico</string>
+    <string name="eval">2da evaluación parcial</string>
+    <string name="priscila">Priscila Edith Gómez Rascón 15551384</string>
+    <string name="daniel">Daniel Quintanilla González 15551397</string>
+    <string name="img1">portada</string>
+    <string name="salir">salir</string>
+    <string name="capturar">capturar</string>
+    <string name="mostrar">mostrar</string>
 </resources>
