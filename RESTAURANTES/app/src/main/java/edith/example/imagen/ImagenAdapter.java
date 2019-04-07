@@ -20,6 +20,7 @@ public class ImagenAdapter extends ArrayAdapter<Imagen> {
     private int iLayImg;
     private Imagen[] aiDatos;
 
+    //Constructor para el adaptador de imagenes
     public ImagenAdapter(Context context, int resource, Imagen[] objects) {
         super(context, resource, objects);
         cApp = context;

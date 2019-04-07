@@ -9,7 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="edith.example.restaurante.Detalle"></activity>
+        <activity
+            android:name="edith.example.restaurante.Detalle"
+            android:parentActivityName=".Mostrar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="edith.example.principal.Mostrar" />
+        </activity>
         <activity
             android:name="edith.example.imagen.SelecImagen"
             android:parentActivityName=".Capturar">

@@ -12,9 +12,9 @@ import edith.example.restaurante.Restaurante;
 import edith.example.restaurante.RestauranteAdapter;
 
 public class Mostrar extends AppCompatActivity implements ListView.OnItemClickListener {
-    ListView lstVwRest;
-    Intent inDetalle;
-    Restaurante[] arRestaurantes = {
+    private ListView lstVwRest;
+    private Intent inDetalle;
+    private Restaurante[] arRestaurantes = {
             new Restaurante(R.drawable.barrafina,
                     "Barra Fina",
                     "Restaurante Gourmet",
@@ -36,14 +36,15 @@ public class Mostrar extends AppCompatActivity implements ListView.OnItemClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mostrar);
-
+        //Se vincula la lista, agrega el adaptador y el listener
         lstVwRest = findViewById(R.id.lstVwRest);
         lstVwRest.setAdapter(new RestauranteAdapter(this, R.layout.layout_restaurante, arRestaurantes));
         lstVwRest.setOnItemClickListener(this);
-
+        //Intento para la actividad Detalle
         inDetalle = new Intent(this, Detalle.class);
     }
 
+    //Al seleccionar un elemento de la lista se envían sus atributos en un bundle a la actividad Detalle
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
         Bundle bDatos = new Bundle();

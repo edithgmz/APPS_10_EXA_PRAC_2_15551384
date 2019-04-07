@@ -2,13 +2,16 @@
     <string name="app_name">RESTAURANTES</string>
     <string name="lbl_materia">aplicaciones i</string>
     <string name="lbl_examen">examen práctico</string>
-    <string name="lbl_eval">2da evaluación parcial</string>
+    <string name="lbl_eva">2da evaluación parcial</string>
     <string name="lbl_nom1">Priscila Edith Gómez Rascón 15551384</string>
     <string name="lbl_nom2">Daniel Quintanilla González 15551397</string>
     <string name="lbl_datos">Datos</string>
     <string name="lbl_desc">Descripción:</string>
     <string name="lbl_dirtel">Dirección y teléfono:</string>
     <string name="lbl_nom_res">Nombre:</string>
+    <string name="lbl_selec">Selecciona tu restaurante</string>
+    <string name="lbl_eval">Evaluación</string>
+    <string name="lbl_opi">tu opinión:</string>
     <string name="btn_salir">salir</string>
     <string name="btn_capturar">capturar</string>
     <string name="btn_mostrar">mostrar</string>

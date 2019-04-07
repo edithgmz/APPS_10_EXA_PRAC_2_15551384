@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:paddingBottom="2dp">
 
     <ImageView
         android:id="@+id/imgVwRes2"
@@ -10,11 +11,13 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:contentDescription="@string/img2"
+        android:scaleType="centerCrop"
         app:srcCompat="@drawable/wafflewolf" />
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
         android:layout_weight="3"
         android:orientation="vertical">
 
@@ -46,11 +49,14 @@
 
     <RatingBar
         android:id="@+id/rbEval2"
-        android:layout_width="0dp"
+        style="?android:attr/ratingBarStyleIndicator"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_weight="2"
+        android:isIndicator="true"
+        android:max="3"
         android:numStars="3"
-        android:rating="1" />
+        android:rating="1"
+        android:stepSize="1" />
 
 </LinearLayout>
