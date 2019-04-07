@@ -9,8 +9,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Restaurantes"></activity>
-        <activity android:name=".Capturar" />
+        <activity
+            android:name=".SelecImagen"
+            android:parentActivityName=".Capturar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Capturar" />
+        </activity>
+        <activity
+            android:name=".Mostrar"
+            android:parentActivityName=".Principal">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Principal" />
+        </activity>
+        <activity
+            android:name=".Capturar"
+            android:parentActivityName=".Principal">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Principal" />
+        </activity>
         <activity android:name=".Principal">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

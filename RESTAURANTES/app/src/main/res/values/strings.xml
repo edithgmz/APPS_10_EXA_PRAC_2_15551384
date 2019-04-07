@@ -1,12 +1,21 @@
 <resources>
     <string name="app_name">RESTAURANTES</string>
-    <string name="materia">aplicaciones i</string>
-    <string name="examen">examen práctico</string>
-    <string name="eval">2da evaluación parcial</string>
-    <string name="priscila">Priscila Edith Gómez Rascón 15551384</string>
-    <string name="daniel">Daniel Quintanilla González 15551397</string>
+    <string name="lbl_materia">aplicaciones i</string>
+    <string name="lbl_examen">examen práctico</string>
+    <string name="lbl_eval">2da evaluación parcial</string>
+    <string name="lbl_nom1">Priscila Edith Gómez Rascón 15551384</string>
+    <string name="lbl_nom2">Daniel Quintanilla González 15551397</string>
+    <string name="lbl_datos">Datos</string>
+    <string name="lbl_desc">Descripción:</string>
+    <string name="lbl_dirtel">Dirección y teléfono:</string>
+    <string name="lbl_nom_res">Nombre:</string>
+    <string name="btn_salir">salir</string>
+    <string name="btn_capturar">capturar</string>
+    <string name="btn_mostrar">mostrar</string>
+    <string name="btn_guardar">Guardar</string>
+    <string name="edt_nom"><![CDATA[Waffle & Wolf]]></string>
+    <string name="edt_desc">Pastelería</string>
+    <string name="edt_dir_tel">Av. Tecnológico #44 Tel: 444–2158</string>
     <string name="img1">portada</string>
-    <string name="salir">salir</string>
-    <string name="capturar">capturar</string>
-    <string name="mostrar">mostrar</string>
+    <string name="img2">imagen representativa</string>
 </resources>

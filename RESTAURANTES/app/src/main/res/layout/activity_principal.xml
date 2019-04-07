@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Principal" >
+    android:padding="5dp"
+    tools:context=".Principal">
 
     <TextView
         android:id="@+id/textView"
@@ -12,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/materia"
+        android:text="@string/lbl_materia"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@android:color/black"
@@ -28,7 +29,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:text="@string/examen"
+        android:text="@string/lbl_examen"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@android:color/black"
@@ -44,7 +45,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:text="@string/eval"
+        android:text="@string/lbl_eval"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@android:color/black"
@@ -59,7 +60,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="1dp"
-        android:text="@string/priscila"
+        android:text="@string/lbl_nom1"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@android:color/black"
@@ -73,7 +74,7 @@
         android:id="@+id/textView5"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/daniel"
+        android:text="@string/lbl_nom2"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@android:color/black"
@@ -116,11 +117,11 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@android:color/holo_purple"
-            android:text="@string/capturar"
+            android:onClick="botonazo"
+            android:text="@string/btn_capturar"
             android:textColor="@android:color/black"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:onClick="botonazo"/>
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btnMos"
@@ -129,11 +130,11 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@android:color/holo_red_light"
-            android:text="@string/mostrar"
+            android:onClick="botonazo"
+            android:text="@string/btn_mostrar"
             android:textColor="@android:color/black"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:onClick="botonazo"/>
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btnSal"
@@ -142,10 +143,10 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@android:color/holo_blue_light"
-            android:text="@string/salir"
+            android:onClick="botonazo"
+            android:text="@string/btn_salir"
             android:textColor="@android:color/black"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:onClick="botonazo"/>
+            android:textStyle="bold" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
