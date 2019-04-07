@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="edith.example.restaurantes">
+    package="edith.example.principal">
 
     <application
         android:allowBackup="true"
@@ -9,26 +9,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name="edith.example.restaurante.Detalle"></activity>
         <activity
-            android:name=".SelecImagen"
+            android:name="edith.example.imagen.SelecImagen"
             android:parentActivityName=".Capturar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Capturar" />
+                android:value="edith.example.principal.Capturar" />
         </activity>
         <activity
             android:name=".Mostrar"
             android:parentActivityName=".Principal">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Principal" />
+                android:value="edith.example.principal.Principal" />
         </activity>
         <activity
             android:name=".Capturar"
             android:parentActivityName=".Principal">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Principal" />
+                android:value="edith.example.principal.Principal" />
         </activity>
         <activity android:name=".Principal">
             <intent-filter>

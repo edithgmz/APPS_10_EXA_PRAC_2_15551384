@@ -1,4 +1,4 @@
-package edith.example.restaurantes;
+package edith.example.imagen;
 /*
  * Created by Edith on 07-Apr-19.
  */
@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+
+import edith.example.principal.R;
 
 public class ImagenAdapter extends ArrayAdapter<Imagen> {
     private Context cApp;

@@ -1,4 +1,4 @@
-package edith.example.restaurantes;
+package edith.example.principal;
 
 import android.content.Intent;
 import android.os.Bundle;

@@ -1,10 +1,13 @@
-package edith.example.restaurantes;
+package edith.example.principal;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
+
+import edith.example.imagen.SelecImagen;
 
 public class Capturar extends AppCompatActivity {
     private Intent inSelecImagen;
@@ -27,5 +30,9 @@ public class Capturar extends AppCompatActivity {
     //Inicia la actividad para seleccionar imagen al presionar el ImageView
     public void selecImagen(View v) {
         startActivity(inSelecImagen);
+    }
+
+    public void guardar(View v) {
+        Toast.makeText(this, "guardar", Toast.LENGTH_LONG).show();
     }
 }

@@ -1,4 +1,4 @@
-package edith.example.restaurantes;
+package edith.example.imagen;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import edith.example.principal.Capturar;
+import edith.example.principal.R;
 
 public class SelecImagen extends AppCompatActivity implements ListView.OnItemClickListener {
     private ListView lstVwImgs;

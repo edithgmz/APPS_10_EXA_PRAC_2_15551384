@@ -1,4 +1,4 @@
-package edith.example.restaurantes;
+package edith.example.imagen;
 /*
  * Created by Edith on 07-Apr-19.
  */
@@ -16,7 +16,7 @@ public class Imagen {
         return img;
     }
 
-    //Método para colocar la imagenh
+    //Método para colocar la imagen
     public void setImg(int img) {
         this.img = img;
     }

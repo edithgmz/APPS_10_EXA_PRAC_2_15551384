@@ -7,7 +7,7 @@
     tools:context=".Mostrar">
 
     <ListView
-        android:id="@+id/lstVwResta"
+        android:id="@+id/lstVwRest"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>
