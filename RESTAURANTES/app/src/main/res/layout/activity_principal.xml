@@ -132,7 +132,8 @@
             android:text="@string/mostrar"
             android:textColor="@android:color/black"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:onClick="botonazo"/>
 
         <Button
             android:id="@+id/btnSal"
@@ -144,6 +145,7 @@
             android:text="@string/salir"
             android:textColor="@android:color/black"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:onClick="botonazo"/>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

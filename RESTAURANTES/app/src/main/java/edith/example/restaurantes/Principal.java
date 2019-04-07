@@ -19,9 +19,11 @@ public class Principal extends AppCompatActivity {
                 Toast.makeText(this,"captura",Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btnMos:
-                Toast.makeText(this,"mostrar",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "mostrar",Toast.LENGTH_LONG).show();
+                break;
             case R.id.btnSal:
                 Toast.makeText(this,"salir",Toast.LENGTH_SHORT).show();
+                break;
         }
     }
 }
