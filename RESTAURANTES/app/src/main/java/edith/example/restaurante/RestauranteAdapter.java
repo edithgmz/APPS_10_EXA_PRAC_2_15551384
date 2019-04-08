@@ -15,19 +15,25 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
+import edith.example.datos.BaseDatos;
 import edith.example.principal.R;
 
 public class RestauranteAdapter extends ArrayAdapter<Restaurante> {
     private Context cApp;
     private int iLayoutRest;
-    private Restaurante[] arDatos;
+    //Lista de restaurantes y restaurante actual
+    private ArrayList<Restaurante> alDatos;
+    //Controlador de base de datos
+    private BaseDatos bd;
 
     //Constructor para el adaptador de restaurante
-    public RestauranteAdapter(@NonNull Context context, int resource, @NonNull Restaurante[] objects) {
+    public RestauranteAdapter(@NonNull Context context, int resource, @NonNull ArrayList<Restaurante> objects) {
         super(context, resource, objects);
         cApp = context;
         iLayoutRest = resource;
-        arDatos = objects;
+        alDatos = objects;
     }
 
     @NonNull
@@ -37,6 +43,8 @@ public class RestauranteAdapter extends ArrayAdapter<Restaurante> {
         TextView txtVwNom2, txtVwDesc2, txtVwDirTel2;
         RatingBar rbEval2;
         View vwLayRest = convertView;
+        //Inicia la lista de restaurantes
+        //alDatos = bd.datosRestaurante();
         //Si el layout no existe lo crea
         if (vwLayRest == null) {
             LayoutInflater liCrearLayout = ((Activity) cApp).getLayoutInflater();
@@ -48,14 +56,16 @@ public class RestauranteAdapter extends ArrayAdapter<Restaurante> {
         txtVwDesc2 = vwLayRest.findViewById(R.id.txtVwDesc2);
         txtVwDirTel2 = vwLayRest.findViewById(R.id.txtVwDirTel2);
         rbEval2 = vwLayRest.findViewById(R.id.rbEval2);
-        //Se crea un arreglo que contendrá los datos obtenidos del constructor
-        Restaurante rRestaurante = arDatos[i];
-        //Se colocan los datos del arreglo en los elementos de la actividad
-        imgVwRes2.setImageResource(rRestaurante.getImg());
-        txtVwNom2.setText(rRestaurante.getNom());
-        txtVwDesc2.setText(rRestaurante.getDesc());
-        txtVwDirTel2.setText(rRestaurante.getDirtel());
-        rbEval2.setProgress(rRestaurante.getCalif());
+        //Crea una lista de restaurantes con la lista obtenida del constructor
+        ArrayList<Restaurante> alRestaurante = alDatos;
+        if (alRestaurante != null) {
+            //Se colocan los datos de la lista en los elementos de la actividad
+            //imgVwRes2.setImageResource(alRestaurante.get(i).getImg());
+            txtVwNom2.setText(alRestaurante.get(i).getNom());
+            txtVwDesc2.setText(alRestaurante.get(i).getDesc());
+            txtVwDirTel2.setText(alRestaurante.get(i).getDirtel());
+            rbEval2.setProgress(alRestaurante.get(i).getCalif());
+        }
         //Devuelve el layout creado
         return vwLayRest;
     }

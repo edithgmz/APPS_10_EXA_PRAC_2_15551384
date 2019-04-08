@@ -9,12 +9,15 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import edith.example.datos.BaseDatos;
 import edith.example.principal.R;
 
 public class Detalle extends AppCompatActivity {
     RatingBar rbEval;
     private ImageView imgVwRes;
     private TextView txtVwNom, txtVwDesc, txtVwDirTel;
+    //Controlador de base de datos
+    private BaseDatos bd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,15 +33,20 @@ public class Detalle extends AppCompatActivity {
         Intent inDatos = getIntent();
         Bundle bDatos = inDatos.getExtras();
         if (bDatos != null) {
-            imgVwRes.setImageResource(bDatos.getInt("IMG_REST"));
+            //imgVwRes.setImageResource(bDatos.getInt("IMG_REST"));
             txtVwNom.setText(bDatos.getString("NOM_REST"));
             txtVwDesc.setText(bDatos.getString("DESC_REST"));
             txtVwDirTel.setText(bDatos.getString("DIRTEL_REST"));
             rbEval.setProgress(bDatos.getInt("CALIF_REST"));
         }
+        //Iniciar controlador de la base de datos
+        bd = new BaseDatos(this);
     }
 
     public void guardar(View v) {
-        Toast.makeText(this, "guardar", Toast.LENGTH_LONG).show();
+        String nom = txtVwNom.getText().toString();
+        int calif = (int) rbEval.getRating();
+        bd.actualizar(nom, calif);
+        Toast.makeText(this, "Guardado", Toast.LENGTH_LONG).show();
     }
 }

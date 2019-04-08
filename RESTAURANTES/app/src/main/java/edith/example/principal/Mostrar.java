@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+
+import edith.example.datos.BaseDatos;
 import edith.example.restaurante.Detalle;
 import edith.example.restaurante.Restaurante;
 import edith.example.restaurante.RestauranteAdapter;
@@ -14,31 +17,24 @@ import edith.example.restaurante.RestauranteAdapter;
 public class Mostrar extends AppCompatActivity implements ListView.OnItemClickListener {
     private ListView lstVwRest;
     private Intent inDetalle;
-    private Restaurante[] arRestaurantes = {
-            new Restaurante(R.drawable.barrafina,
-                    "Barra Fina",
-                    "Restaurante Gourmet",
-                    "Periférico de la Juventud #312 Distrito 1 Tel: 472-8500",
-                    2),
-            new Restaurante(R.drawable.bourkestreetbakery,
-                    "Bourke Street Bakery",
-                    "Pastelería y café",
-                    "Barangaroo Avenue #4/23 Tel: 831-9468",
-                    3),
-            new Restaurante(R.drawable.cafedeadend,
-                    "Cafe Deadend",
-                    "Café",
-                    "Po Hing Fong #72 Tel: 671-7005",
-                    1)
-    };
+    //Lista de restaurantes y restaurante actual
+    private ArrayList<Restaurante> alRestaurante;
+    private Restaurante r;
+    private Restaurante[] rest;
+    //Controlador de base de datos
+    private BaseDatos bd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mostrar);
+        //Iniciar controlador de la base de datos
+        bd = new BaseDatos(this);
+        //Inicia la lista de restaurantes
+        alRestaurante = bd.datosRestaurante();
         //Se vincula la lista, agrega el adaptador y el listener
         lstVwRest = findViewById(R.id.lstVwRest);
-        lstVwRest.setAdapter(new RestauranteAdapter(this, R.layout.layout_restaurante, arRestaurantes));
+        lstVwRest.setAdapter(new RestauranteAdapter(this, R.layout.layout_restaurante, alRestaurante));
         lstVwRest.setOnItemClickListener(this);
         //Intento para la actividad Detalle
         inDetalle = new Intent(this, Detalle.class);
@@ -48,11 +44,11 @@ public class Mostrar extends AppCompatActivity implements ListView.OnItemClickLi
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
         Bundle bDatos = new Bundle();
-        bDatos.putInt("IMG_REST", arRestaurantes[i].getImg());
-        bDatos.putString("NOM_REST", arRestaurantes[i].getNom());
-        bDatos.putString("DESC_REST", arRestaurantes[i].getDesc());
-        bDatos.putString("DIRTEL_REST", arRestaurantes[i].getDirtel());
-        bDatos.putInt("CALIF_REST", arRestaurantes[i].getCalif());
+        bDatos.putInt("IMG_REST", alRestaurante.get(i).getImg());
+        bDatos.putString("NOM_REST", alRestaurante.get(i).getNom());
+        bDatos.putString("DESC_REST", alRestaurante.get(i).getDesc());
+        bDatos.putString("DIRTEL_REST", alRestaurante.get(i).getDirtel());
+        bDatos.putInt("CALIF_REST", alRestaurante.get(i).getCalif());
         inDetalle.putExtras(bDatos);
         startActivity(inDetalle);
     }
