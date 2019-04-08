@@ -54,6 +54,7 @@ public class SelecImagen extends AppCompatActivity implements ListView.OnItemCli
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
         inCapturar.putExtra("IMAGEN", aimImagenes[i].getImg());
+        Imagen.current= aimImagenes[i].getImg();
         startActivity(inCapturar);
     }
 }

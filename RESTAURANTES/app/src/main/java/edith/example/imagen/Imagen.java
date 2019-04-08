@@ -5,6 +5,7 @@ package edith.example.imagen;
 
 public class Imagen {
     private int img;
+    public static int current;
 
     //Constructor para añadir imagen
     public Imagen(int img) {
