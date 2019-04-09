@@ -17,16 +17,13 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import edith.example.datos.BaseDatos;
 import edith.example.principal.R;
 
 public class RestauranteAdapter extends ArrayAdapter<Restaurante> {
     private Context cApp;
     private int iLayoutRest;
-    //Lista de restaurantes y restaurante actual
+    //Lista de restaurantes
     private ArrayList<Restaurante> alDatos;
-    //Controlador de base de datos
-    private BaseDatos bd;
 
     //Constructor para el adaptador de restaurante
     public RestauranteAdapter(@NonNull Context context, int resource, @NonNull ArrayList<Restaurante> objects) {
@@ -43,8 +40,6 @@ public class RestauranteAdapter extends ArrayAdapter<Restaurante> {
         TextView txtVwNom2, txtVwDesc2, txtVwDirTel2;
         RatingBar rbEval2;
         View vwLayRest = convertView;
-        //Inicia la lista de restaurantes
-        //alDatos = bd.datosRestaurante();
         //Si el layout no existe lo crea
         if (vwLayRest == null) {
             LayoutInflater liCrearLayout = ((Activity) cApp).getLayoutInflater();
@@ -60,7 +55,7 @@ public class RestauranteAdapter extends ArrayAdapter<Restaurante> {
         ArrayList<Restaurante> alRestaurante = alDatos;
         if (alRestaurante != null) {
             //Se colocan los datos de la lista en los elementos de la actividad
-            //imgVwRes2.setImageResource(alRestaurante.get(i).getImg());
+            imgVwRes2.setImageResource(alRestaurante.get(i).getImg());
             txtVwNom2.setText(alRestaurante.get(i).getNom());
             txtVwDesc2.setText(alRestaurante.get(i).getDesc());
             txtVwDirTel2.setText(alRestaurante.get(i).getDirtel());

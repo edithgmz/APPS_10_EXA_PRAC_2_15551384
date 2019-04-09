@@ -5,20 +5,25 @@ package edith.example.imagen;
 
 public class Imagen {
     private int img;
-    public static int current;
+    public int id;
 
-    //Constructor para añadir imagen
-    public Imagen(int img) {
+    //Constructor para añadir imagen y id
+    Imagen(int img, int id) {
         this.img = img;
+        this.id = id;
     }
 
-    //Método para obtener la imagen
-    public int getImg() {
+    //Métodos para obtener la imagen y un id
+    int getImg() {
         return img;
     }
 
-    //Método para colocar la imagen
-    public void setImg(int img) {
-        this.img = img;
+    public int getId() {
+        return id;
+    }
+
+    //Método para colocar un id
+    public void setId(int id) {
+        this.id = id;
     }
 }

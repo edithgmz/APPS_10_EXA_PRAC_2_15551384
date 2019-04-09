@@ -23,7 +23,7 @@ public class BaseDatos extends SQLiteOpenHelper {
     //Constructor de la base de datos
     public BaseDatos(Context context) {
         super(context, NOMBRE_BD, null, VERSION_BD);
-        bd = this.getWritableDatabase();
+        bd = this.getWritableDatabase(); //Es un método interno
     }
 
     //Ejecuta el query cuando se crea la base de datos
@@ -47,10 +47,10 @@ public class BaseDatos extends SQLiteOpenHelper {
         bd.insert("restaurante", null, cv);
     }
 
-    //Obtener la lista de datos de restaurante
+    //Obtener la lista de restaurantes
     public ArrayList<Restaurante> datosRestaurante() {
         ArrayList<Restaurante> alRestaurantes = new ArrayList<>();
-        //Se crea el cursor
+        //Se crea el cursor ejecutando el query para leer los datos de la tabla
         Cursor c = bd.rawQuery(LEER_TABLA, null);
         if (c != null && c.getCount() > 0) {
             c.moveToFirst();
@@ -61,19 +61,22 @@ public class BaseDatos extends SQLiteOpenHelper {
                 String descr = c.getString(c.getColumnIndex("descr"));
                 String dirtel = c.getString(c.getColumnIndex("dirtel"));
                 int calif = c.getInt(c.getColumnIndex("calif"));
-                //Se añaden los atributos al arreglo
+                //Se añaden los atributos al objeto
                 alRestaurantes.add(new Restaurante(img, nom, descr, dirtel, calif));
             } while (c.moveToNext());
         }
         //Cerrar cursor
-        c.close();
+        if (c != null) {
+            c.close();
+        }
         return alRestaurantes;
     }
 
     //Actualizar registro de restaurante
-    public void actualizar(String nom, int calif) {
+    public void actualizar(String nom, String desc, String dirtel, int calif) {
+        String[] args = new String[]{nom, desc, dirtel};
         ContentValues cv = new ContentValues();
         cv.put("calif", calif);
-        bd.update("restaurante", cv, "nom=" + nom, null);
+        bd.update("restaurante", cv, "nom=? AND descr=? AND dirtel=?", args);
     }
 }

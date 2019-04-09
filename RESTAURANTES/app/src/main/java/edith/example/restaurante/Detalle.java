@@ -33,7 +33,7 @@ public class Detalle extends AppCompatActivity {
         Intent inDatos = getIntent();
         Bundle bDatos = inDatos.getExtras();
         if (bDatos != null) {
-            //imgVwRes.setImageResource(bDatos.getInt("IMG_REST"));
+            imgVwRes.setImageResource(bDatos.getInt("IMG_REST"));
             txtVwNom.setText(bDatos.getString("NOM_REST"));
             txtVwDesc.setText(bDatos.getString("DESC_REST"));
             txtVwDirTel.setText(bDatos.getString("DIRTEL_REST"));
@@ -43,10 +43,13 @@ public class Detalle extends AppCompatActivity {
         bd = new BaseDatos(this);
     }
 
+    //Actualiza el cambio de calificación en un registro
     public void guardar(View v) {
         String nom = txtVwNom.getText().toString();
+        String desc = txtVwDesc.getText().toString();
+        String dirtel = txtVwDirTel.getText().toString();
         int calif = (int) rbEval.getRating();
-        bd.actualizar(nom, calif);
-        Toast.makeText(this, "Guardado", Toast.LENGTH_LONG).show();
+        bd.actualizar(nom, desc, dirtel, calif);
+        Toast.makeText(this, "Guardado", Toast.LENGTH_SHORT).show();
     }
 }

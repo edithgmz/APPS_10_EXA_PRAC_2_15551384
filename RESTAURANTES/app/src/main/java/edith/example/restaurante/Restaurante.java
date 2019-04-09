@@ -26,29 +26,10 @@ public class Restaurante {
     public String getDesc() {
         return desc;
     }
-
     public String getDirtel() {
         return dirtel;
     }
     public int getCalif() {
         return calif;
-    }
-
-    public void setDirtel(String dirtel) {
-        this.dirtel = dirtel;
-    }
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-    public void setDesc(String desc) {
-        this.desc = desc;
-    }
-
-    //Métodos para colocar los atributos del restaurante
-    public void setImg(int img) {
-        this.img = img;
-    }
-    public void setCalif(int calif) {
-        this.calif = calif;
     }
 }

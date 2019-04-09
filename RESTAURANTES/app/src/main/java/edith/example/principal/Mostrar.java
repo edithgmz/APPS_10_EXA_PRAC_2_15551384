@@ -19,8 +19,6 @@ public class Mostrar extends AppCompatActivity implements ListView.OnItemClickLi
     private Intent inDetalle;
     //Lista de restaurantes y restaurante actual
     private ArrayList<Restaurante> alRestaurante;
-    private Restaurante r;
-    private Restaurante[] rest;
     //Controlador de base de datos
     private BaseDatos bd;
 

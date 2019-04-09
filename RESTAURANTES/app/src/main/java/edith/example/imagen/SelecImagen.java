@@ -15,27 +15,27 @@ public class SelecImagen extends AppCompatActivity implements ListView.OnItemCli
     private Intent inCapturar;
     //Arreglo con las imagenes seleccionables
     private Imagen[] aimImagenes = {
-            new Imagen(R.drawable.barrafina),
-            new Imagen(R.drawable.bourkestreetbakery),
-            new Imagen(R.drawable.cafedeadend),
-            new Imagen(R.drawable.cafeloisl),
-            new Imagen(R.drawable.cafelore),
-            new Imagen(R.drawable.confessional),
-            new Imagen(R.drawable.donostia),
-            new Imagen(R.drawable.fiveleaves),
-            new Imagen(R.drawable.forkeerestaurant),
-            new Imagen(R.drawable.grahamavenuemeats),
-            new Imagen(R.drawable.haighschocolate),
-            new Imagen(R.drawable.homei),
-            new Imagen(R.drawable.palominoespresso),
-            new Imagen(R.drawable.petiteoyster),
-            new Imagen(R.drawable.posatelier),
-            new Imagen(R.drawable.royaloak),
-            new Imagen(R.drawable.teakha),
-            new Imagen(R.drawable.thaicafe),
-            new Imagen(R.drawable.traif),
-            new Imagen(R.drawable.upstate),
-            new Imagen(R.drawable.wafflewolf)
+            new Imagen(R.drawable.barrafina, 10),
+            new Imagen(R.drawable.bourkestreetbakery, 11),
+            new Imagen(R.drawable.cafedeadend, 12),
+            new Imagen(R.drawable.cafeloisl, 13),
+            new Imagen(R.drawable.cafelore, 14),
+            new Imagen(R.drawable.confessional, 15),
+            new Imagen(R.drawable.donostia, 16),
+            new Imagen(R.drawable.fiveleaves, 17),
+            new Imagen(R.drawable.forkeerestaurant, 18),
+            new Imagen(R.drawable.grahamavenuemeats, 19),
+            new Imagen(R.drawable.haighschocolate, 20),
+            new Imagen(R.drawable.homei, 21),
+            new Imagen(R.drawable.palominoespresso, 22),
+            new Imagen(R.drawable.petiteoyster, 23),
+            new Imagen(R.drawable.posatelier, 24),
+            new Imagen(R.drawable.royaloak, 25),
+            new Imagen(R.drawable.teakha, 26),
+            new Imagen(R.drawable.thaicafe, 27),
+            new Imagen(R.drawable.traif, 28),
+            new Imagen(R.drawable.upstate, 29),
+            new Imagen(R.drawable.wafflewolf, 30)
     };
 
     @Override
@@ -50,11 +50,11 @@ public class SelecImagen extends AppCompatActivity implements ListView.OnItemCli
         inCapturar = new Intent(this, Capturar.class);
     }
 
-    //Al seleccionar una imagen se coloca en un Extra y se envía a la actividad Capturar
+    //Al seleccionar una imagen se coloca en un Extra junto con su id y se envía a la actividad Capturar
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
         inCapturar.putExtra("IMAGEN", aimImagenes[i].getImg());
-        Imagen.current= aimImagenes[i].getImg();
+        inCapturar.putExtra("ID", aimImagenes[i].getId());
         startActivity(inCapturar);
     }
 }
